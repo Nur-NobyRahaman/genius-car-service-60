@@ -4,6 +4,11 @@ import Header from './Pages/Shared/Header/Header';
 import Footer from './Pages/Shared/Footer/Footer';
 import About from './Pages/About/About';
 import Home from './Pages/Home/Home/Home';
+import ServicesDetails from './Pages/ServicesDetails/ServicesDetails';
+import Login from './Pages/Login/Login';
+import Register from './Pages/Register/Register';
+import RequiredAuth from './Pages/RequiredAuth/RequiredAuth';
+import CheckOut from './CheckOut/CheckOut/CheckOut';
 
 function App() {
   return (
@@ -11,9 +16,14 @@ function App() {
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/home' element={<Home></Home>}></Route>
         <Route path='about' element={<About></About>}></Route>
-        <Route></Route>
-        <Route></Route>
+        <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/register' element={<Register></Register>}></Route>
+        
+
+        <Route path='/service/:serviceId' element={<ServicesDetails></ServicesDetails>}></Route>
+        <Route path='/checkout' element={<RequiredAuth><CheckOut></CheckOut></RequiredAuth>}></Route>
         <Route></Route>
 
       </Routes>
